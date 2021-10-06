@@ -4,7 +4,7 @@ import NavigationBar from './components/NavigationBar';
 import GenresMenu from './components/GenresMenu';
 import ShowMovies from './components/ShowMovies';
 import Footer from './components/Footer';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import { BrowserRouter as Router, Switch } from 'react-router-dom';
 
 
 function App() {
