@@ -16,7 +16,7 @@ class ShowMovies extends React.Component {
 
   async fetchMovies(q) {
     let query = q;
-    const apiKey = "2850d816";
+    const apiKey = "86c3b5f5";
 
 
     try {
