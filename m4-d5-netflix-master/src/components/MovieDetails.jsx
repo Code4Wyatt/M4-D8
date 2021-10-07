@@ -1,15 +1,29 @@
-import { useEffect } from "react"
+import { useEffect, useState } from "react"
+import { useParams } from "react-router"
 
-const MovieDetails = (props) => {
-    const [movieId, setMovieId] = useState('')
+const MovieDetails = () => {
+    const [details, setMovieDetails] = useState(null);
+    const [comments, setComments] = useState([]);
+
+    const params = useParams
 
     useEffect(() => {
-        let retrievedIdFromURL = match.params.movie.imdbID
+        const retrievedFromURLId = async () => {
+            let resp = await fetch("http://www.omdbapi.com/?apikey=86c3b5f5&i=" + match.params.movieID)
+        };
 
-        let foundMovie = items.find(movie => movie.imdbID.toString() === retrievedIdFromURL)
-        console.log(foundMovie)
-        setMovieId(foundMovie)
-    })
+        if (resp.ok) {
+            let data = await resp.JSON();
+            console.log({ data })
+            setMovieDetails(data)
+        } else {
+            console.log("Error")
+        } catch (error) {
+            console.log(error.message);
+        };
+        
+    });
+};
 
     return (
         <Container>
